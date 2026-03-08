@@ -13,12 +13,12 @@
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ongesperancadobem.ru/">
+    <meta property="og:url" content="https://esperancapelavida.vercel.app/">
     <meta property="og:title" content="Luan tem 8 anos e quer salvar a mãe">
     <meta property="og:description"
         content="Luan tem apenas 8 anos e precisa da sua ajuda para salvar a vida de sua mãe. R$ 68.080 arrecadados de R$ 95.000. Ajude agora!">
     <meta property="og:image"
-        content="https://ongesperancadobem.ru/storage/campaigns/7e171e6d-7e74-4522-ab15-2f7c769023d6.webp">
+        content="https://esperancapelavida.vercel.app/storage/campaigns/7e171e6d-7e74-4522-ab15-2f7c769023d6.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="OngesperançadoBem">
@@ -30,7 +30,7 @@
     <meta name="twitter:description"
         content="Luan tem apenas 8 anos e precisa da sua ajuda para salvar a vida de sua mãe.">
     <meta name="twitter:image"
-        content="https://ongesperancadobem.ru/storage/campaigns/7e171e6d-7e74-4522-ab15-2f7c769023d6.webp">
+        content="https://esperancapelavida.vercel.app/storage/campaigns/7e171e6d-7e74-4522-ab15-2f7c769023d6.webp">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,7 +106,7 @@
     </style>
 </head>
 
-<body class="bg-white text-gray-800 antialiased">
+<body class="bg-white text-gray-800 antialiased" x-data="campaignStore()">
 
     <!-- ===================== HEADER ===================== -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm" x-data="{ open: false }">
@@ -114,7 +114,7 @@
 
             <!-- Logo -->
             <a href="/" class="flex items-center gap-2 flex-shrink-0">
-                <img src="https://ongesperancadobem.ru/storage/campaigns/branding/cc851ba9-0b26-4d6b-a75b-bc3752551345.webp"
+                <img src="https://esperancapelavida.vercel.app/storage/campaigns/branding/cc851ba9-0b26-4d6b-a75b-bc3752551345.webp"
                     alt="OngesperançadoBem" class="h-9 w-auto object-contain"
                     onerror="this.parentElement.innerHTML='<span class=\'font-poppins font-bold text-primary text-lg\'>Onges<span class=\'text-gray-800\'>perançadoBem</span></span>'">
             </a>
@@ -182,7 +182,7 @@
 
                     <!-- Campaign Image -->
                     <div class="relative rounded-2xl overflow-hidden shadow-xl">
-                        <img src="https://ongesperancadobem.ru/storage/campaigns/7e171e6d-7e74-4522-ab15-2f7c769023d6.webp"
+                        <img src="https://esperancapelavida.vercel.app/storage/campaigns/7e171e6d-7e74-4522-ab15-2f7c769023d6.webp"
                             alt="Luan e sua mãe" class="w-full object-cover aspect-video">
                         <div class="absolute top-4 left-4">
                             <span
@@ -211,11 +211,11 @@
                         <!-- Stats -->
                         <div class="grid grid-cols-3 gap-3">
                             <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-gray-100">
-                                <div class="font-poppins font-bold text-xl text-primary">71.7%</div>
+                                <div class="font-poppins font-bold text-xl text-primary" x-text="progressFormatted + '% '"></div>
                                 <div class="text-xs text-gray-500 mt-1">Alcançado</div>
                             </div>
                             <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-gray-100">
-                                <div class="font-poppins font-bold text-xl text-gray-800">423</div>
+                                <div class="font-poppins font-bold text-xl text-gray-800" x-text="donors"></div>
                                 <div class="text-xs text-gray-500 mt-1">Doadores</div>
                             </div>
                             <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-gray-100">
@@ -227,13 +227,13 @@
                         <!-- Progress Bar -->
                         <div>
                             <div class="flex justify-between items-end text-sm mb-2">
-                                <span class="font-semibold text-gray-900">R$ 68.080,00 arrecadados</span>
+                                <span class="font-semibold text-gray-900"><span x-text="fmt(totalAmount)"></span> arrecadados</span>
                                 <span class="text-gray-500 text-xs">Meta: R$ 95.000,00</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-3.5 overflow-hidden">
-                                <div class="progress-bar h-3.5 rounded-full" style="width: 71.7%"></div>
+                                <div class="progress-bar h-3.5 rounded-full" :style="'width: ' + progressPercent + '% '"></div>
                             </div>
-                            <p class="text-xs text-gray-400 mt-1.5 text-right">Faltam R$ 26.920,00</p>
+                            <p class="text-xs text-gray-400 mt-1.5 text-right" x-text="'Faltam ' + fmt(remainingAmount)"></p>
                         </div>
 
                         <!-- CTA (desktop only) -->
@@ -245,7 +245,7 @@
                         <!-- Share -->
                         <div class="flex items-center gap-3 flex-wrap">
                             <span class="text-sm text-gray-500">Compartilhar:</span>
-                            <a href="https://wa.me/?text=Ajude%20o%20Luan%20a%20salvar%20a%20m%C3%A3e%21%20https%3A%2F%2Fongesperancadobem.ru"
+                            <a href="https://wa.me/?text=Ajude%20o%20Luan%20a%20salvar%20a%20m%C3%A3e%21%20https%3A%2F%2Fesperancapelavida.vercel.app"
                                 target="_blank" rel="noopener"
                                 class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors">
                                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -254,7 +254,7 @@
                                 </svg>
                                 WhatsApp
                             </a>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fongesperancadobem.ru"
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fesperancapelavida.vercel.app"
                                 target="_blank" rel="noopener"
                                 class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors">
                                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -301,7 +301,7 @@
 
                             <!-- Internal image -->
                             <figure class="my-8">
-                                <img src="https://ongesperancadobem.ru/storage/uploads/content/VNslYvCK7HDkV6g7KHJHaoXAlzSbwOkgupibDVMz.jpg"
+                                <img src="https://esperancapelavida.vercel.app/storage/uploads/content/VNslYvCK7HDkV6g7KHJHaoXAlzSbwOkgupibDVMz.jpg"
                                     alt="Luan com sua família" class="w-full rounded-2xl shadow-md object-cover">
                                 <figcaption class="text-center text-sm text-gray-400 mt-2 italic">
                                     Luan e sua família durante um momento especial
@@ -319,7 +319,7 @@
                                 A meta desta campanha é arrecadar <strong class="text-primary">R$ 95.000,00</strong>
                                 para cobrir os custos do tratamento médico completo, incluindo cirurgia, medicamentos e
                                 acompanhamento pós-operatório. Até agora já arrecadamos <strong class="text-primary">R$
-                                    68.080,00</strong> — mais de 71% da meta! Mas ainda precisamos da sua ajuda para
+                                    <span x-text="fmt(totalAmount)"></span></strong> — mais de <span x-text="progressFormatted + '% '"></span> da meta! Mas ainda precisamos da sua ajuda para
                                 chegar lá.
                             </p>
 
@@ -413,17 +413,17 @@
                                 <div class="px-5 pt-5 pb-4 border-b border-gray-100">
                                     <div class="flex items-end justify-between mb-2">
                                         <div>
-                                            <div class="font-poppins font-bold text-xl text-gray-900">R$ 68.080,00</div>
+                                            <div class="font-poppins font-bold text-xl text-gray-900" x-text="fmt(totalAmount)"></div>
                                             <div class="text-xs text-gray-400">arrecadados de R$ 95.000,00</div>
                                         </div>
-                                        <span class="font-poppins font-bold text-2xl text-primary">71.7%</span>
+                                        <span class="font-poppins font-bold text-2xl text-primary" x-text="progressFormatted + '% '"></span>
                                     </div>
                                     <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                                        <div class="progress-bar h-3 rounded-full" style="width: 71.7%"></div>
+                                        <div class="progress-bar h-3 rounded-full" :style="'width: ' + progressPercent + '% '"></div>
                                     </div>
                                     <div class="flex justify-between text-xs text-gray-400 mt-1.5">
-                                        <span>423 doadores</span>
-                                        <span>Falta R$ 26.920,00</span>
+                                        <span><span x-text="donors"></span> doadores</span>
+                                        <span x-text="'Falta ' + fmt(remainingAmount)"></span>
                                     </div>
                                 </div>
 
@@ -590,7 +590,7 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
                 <div class="flex items-center gap-2">
-                    <img src="https://ongesperancadobem.ru/storage/campaigns/branding/cc851ba9-0b26-4d6b-a75b-bc3752551345.webp"
+                    <img src="https://esperancapelavida.vercel.app/storage/campaigns/branding/cc851ba9-0b26-4d6b-a75b-bc3752551345.webp"
                         alt="Logo" class="h-7 w-auto brightness-0 invert opacity-40"
                         onerror="this.style.display='none'">
                     <span class="text-gray-400 font-medium">OngesperançadoBem</span>
@@ -905,6 +905,98 @@
         }
     </script>
 
+
+    <!-- ===================== TOAST NOTIFICATION ===================== -->
+    <div class="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-[100]" x-cloak x-show="showToast"
+        x-transition:enter="transition ease-out duration-300 transform"
+        x-transition:enter-start="translate-y-12 opacity-0"
+        x-transition:enter-end="translate-y-0 opacity-100"
+        x-transition:leave="transition ease-in duration-300 transform"
+        x-transition:leave-start="translate-y-0 opacity-100"
+        x-transition:leave-end="translate-y-12 opacity-0">
+        <div class="bg-white px-4 py-3 rounded-2xl shadow-xl shadow-primary/20 border border-primary/10 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm shrink-0 shadow-inner">
+                <span x-text="recentDonation ? recentDonation.initials : '?'"></span>
+            </div>
+            <div class="flex-1">
+                <p class="text-xs text-gray-400 font-medium">Doação recebida agora</p>
+                <p class="text-sm font-semibold text-gray-800">
+                    <span x-text="recentDonation ? recentDonation.name : ''"></span> doou 
+                    <span class="text-secondary" x-text="recentDonation ? fmt(recentDonation.amount) : ''"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- campaignStore() component -->
+    <script>
+        function campaignStore() {
+            return {
+                totalAmount: 68080.00,
+                goalAmount: 95000.00,
+                donors: 423,
+                
+                recentDonation: null,
+                showToast: false,
+
+                names: [
+                    'Maria F.', 'João P.', 'Ana L.', 'Carla O.', 'Roberto S.', 
+                    'Pedro M.', 'Fernanda C.', 'Lucas R.', 'Beatriz T.', 'Carlos E.',
+                    'Julia N.', 'Marcos V.', 'Sofia A.', 'Gabriel L.', 'Amanda P.'
+                ],
+
+                get progressPercent() {
+                    const p = (this.totalAmount / this.goalAmount) * 100;
+                    return p > 100 ? 100 : p;
+                },
+
+                get progressFormatted() {
+                    return this.progressPercent.toFixed(1);
+                },
+
+                get remainingAmount() {
+                    const r = this.goalAmount - this.totalAmount;
+                    return r < 0 ? 0 : r;
+                },
+
+                fmt(v) {
+                    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(v);
+                },
+
+                init() {
+                    // Simulate a donation every 40-50 seconds
+                    setTimeout(() => {
+                        this.simulateDonation();
+                        setInterval(() => {
+                            this.simulateDonation();
+                        }, Math.floor(Math.random() * 5000) + 10000);
+                    }, 20000);
+                },
+
+                simulateDonation() {
+                    if (this.showToast) return; // wait if already showing
+
+                    // Random amount between 10 and 50
+                    const amount = Math.floor(Math.random() * (50 - 10 + 1) + 10);
+                    // Random name
+                    const name = this.names[Math.floor(Math.random() * this.names.length)];
+                    const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2);
+
+                    // Update states
+                    this.totalAmount += amount;
+                    this.donors += 1;
+                    
+                    this.recentDonation = { name, amount, initials };
+                    this.showToast = true;
+
+                    // Hide toast after 5 seconds
+                    setTimeout(() => {
+                        this.showToast = false;
+                    }, 5000);
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
