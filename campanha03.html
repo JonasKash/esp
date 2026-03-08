@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💔 Natália infartou trabalhando. Agora precisa de ajuda para não morrer na rua. | OngesperançadoBem</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Sua ajuda pode fazer a diferença na vida da Natália!">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://esperancapelavida.vercel.app/campanha03">
+    <meta property="og:title" content="💔 Natália infartou trabalhando. Agora precisa de ajuda para não morrer na rua.">
+    <meta property="og:description"
+        content="Sua ajuda pode fazer a diferença na vida da Natália! Ajude agora!">
+    <meta property="og:image"
+        content="https://ongesperancadobem.ru/storage/campaigns/ee693fc7-bf14-4f6c-a5ed-33f197b84a28.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="OngesperançadoBem">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="💔 Natália infartou trabalhando. Agora precisa de ajuda para não morrer na rua.">
+    <meta name="twitter:description"
+        content="Sua ajuda pode fazer a diferença na vida da Natália!">
+    <meta name="twitter:image"
+        content="https://ongesperancadobem.ru/storage/campaigns/ee693fc7-bf14-4f6c-a5ed-33f197b84a28.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D97E7E',
+                        'primary-dark': '#C46B6B',
+                        'primary-light': '#F5D0D0',
+                        secondary: '#10B981',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Alpine.js v3.15.3 -->
+    <script defer src="https://unpkg.com/alpinejs@3.15.3/dist/cdn.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #D97E7E 0%, #C46B6B 100%);
+            transition: width 1.2s ease-in-out;
+        }
+
+        .btn-amount.selected {
+            background-color: #D97E7E;
+            color: #fff;
+            border-color: #D97E7E;
+            box-shadow: 0 4px 12px rgba(217, 126, 126, 0.35);
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fix: mobile bottom spacing */
+        @media (max-width: 767px) {
+            main {
+                padding-bottom: 80px;
+            }
+        }
+
+        /* Alpine cloak — prevents flash before JS hydrates */
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 antialiased" x-data="campaignStore()">
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm" x-data="{ open: false }">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2 flex-shrink-0">
+                <img src="https://ongesperancadobem.ru/storage/campaigns/branding/cc851ba9-0b26-4d6b-a75b-bc3752551345.webp"
+                    alt="OngesperançadoBem" class="h-9 w-auto object-contain"
+                    onerror="this.parentElement.innerHTML='<span class=\'font-poppins font-bold text-primary text-lg\'>Onges<span class=\'text-gray-800\'>perançadoBem</span></span>'">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="#historia"
+                    class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">História</a>
+                <a href="#apoios"
+                    class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Apoios</a>
+                <a href="#choice"
+                    class="bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shadow-sm">
+                    Quero Ajudar 🙏
+                </a>
+            </nav>
+
+            <!-- Mobile burger -->
+            <button @click="open = !open" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Menu">
+                <svg x-show="!open" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg x-show="open" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="open" x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-2"
+            class="md:hidden bg-white border-t border-gray-100 px-4 py-4 shadow-lg">
+            <nav class="flex flex-col gap-1">
+                <a @click="open=false" href="#historia"
+                    class="py-3 px-2 text-gray-700 font-medium border-b border-gray-50 hover:text-primary transition-colors">História</a>
+                <a @click="open=false" href="#apoios"
+                    class="py-3 px-2 text-gray-700 font-medium border-b border-gray-50 hover:text-primary transition-colors">Apoios</a>
+                <a @click="open=false" href="#choice"
+                    class="mt-3 bg-primary hover:bg-primary-dark text-white font-semibold text-center py-3 rounded-xl transition-colors">
+                    Quero Ajudar 🙏
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===================== MAIN ===================== -->
+    <main class="pt-16">
+
+        <!-- ===== HERO SECTION ===== -->
+        <section class="bg-gray-50 py-8 border-b border-gray-100">
+            <div class="max-w-6xl mx-auto px-4">
+
+                <!-- Breadcrumb -->
+                <nav class="text-xs text-gray-400 mb-5 flex items-center gap-1.5">
+                    <a href="/" class="hover:text-primary transition-colors">Início</a>
+                    <span>/</span>
+                    <a href="/" class="hover:text-primary transition-colors">Campanhas</a>
+                    <span>/</span>
+                    <span class="text-gray-600">Natália infartou trabalhando. Agora precisa de ajuda</span>
+                </nav>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+                    <!-- Campaign Image -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl">
+                        <img src="https://ongesperancadobem.ru/storage/campaigns/ee693fc7-bf14-4f6c-a5ed-33f197b84a28.webp"
+                            alt="Rosiele e Rege" class="w-full object-cover aspect-video">
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="bg-primary text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-md">
+                                ❤️ Campanha Ativa
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Campaign Info -->
+                    <div class="flex flex-col gap-5">
+                        <div>
+                            <h1 class="font-poppins font-bold text-3xl lg:text-4xl text-gray-900 leading-tight mb-3">
+                                💔 Natália infartou trabalhando. Agora precisa de ajuda para não morrer na rua.
+                            </h1>
+                            <p class="text-gray-500 text-sm flex items-center gap-2">
+                                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                                Criado por <strong class="text-gray-700 ml-1">Amigos da Natália</strong>
+                            </p>
+                            <p class="text-gray-400 text-xs mt-1 flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                Criada em 08/03/2026
+                            </p>
+                        </div>
+
+                        <!-- Verified badge -->
+                        <div class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-xl px-4 py-2.5 w-fit">
+                            <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            <span class="text-xs font-semibold text-green-700">Caso verificado pela equipe</span>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-gray-100">
+                                <div class="font-poppins font-bold text-xl text-primary" x-text="progressFormatted + '% '"></div>
+                                <div class="text-xs text-gray-500 mt-1">Alcançado</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-gray-100">
+                                <div class="font-poppins font-bold text-xl text-gray-800" x-text="donors"></div>
+                                <div class="text-xs text-gray-500 mt-1">Doadores</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-gray-100">
+                                <div class="font-poppins font-bold text-xl text-secondary">12</div>
+                                <div class="text-xs text-gray-500 mt-1">Dias restantes</div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div>
+                            <div class="flex justify-between items-end text-sm mb-2">
+                                <span class="font-semibold text-gray-900"><span x-text="fmt(totalAmount)"></span> arrecadados</span>
+                                <span class="text-gray-500 text-xs">Meta: R$ 30.000,00</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3.5 overflow-hidden">
+                                <div class="progress-bar h-3.5 rounded-full" :style="'width: ' + progressPercent + '% '"></div>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1.5 text-right" x-text="'Faltam ' + fmt(remainingAmount)"></p>
+                        </div>
+
+                        <!-- CTA (desktop only) -->
+                        <a href="#choice"
+                            class="hidden md:flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-poppins font-bold text-lg py-4 px-8 rounded-2xl transition-all shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:scale-[1.01] active:scale-[0.99]">
+                            Quero Ajudar 🙏
+                        </a>
+
+                        <!-- Share -->
+                        <div class="flex items-center gap-3 flex-wrap">
+                            <span class="text-sm text-gray-500">Compartilhar:</span>
+                            <a href="https://wa.me/?text=Ajude%20a%20Nat%C3%A1lia%21%20https%3A%2F%2Fesperancapelavida.vercel.app%2Fcampanha03"
+                                target="_blank" rel="noopener"
+                                class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                                WhatsApp
+                            </a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fesperancapelavida.vercel.app%2Fcampanha03"
+                                target="_blank" rel="noopener"
+                                class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTENT + DONATION WIDGET ===== -->
+        <section class="py-10">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+                    <!-- Story (left / top on mobile) -->
+                    <div id="historia" class="lg:col-span-2 order-2 lg:order-1">
+                        <h2 class="font-poppins font-bold text-2xl text-gray-900 mb-6">A História da Natália</h2>
+
+                        <div class="space-y-4 text-gray-700 text-base leading-7">
+                            <p class="text-justify">
+                                ⚠️ <strong>Natália, uma mulher incrível e lutadora, sofreu um infarto enquanto trabalhava para sustentar sua família.</strong>
+                            </p>
+
+                            <p class="text-justify">
+                                Com hipertensão e muitas dívidas acumuladas, ela teve que voltar ao trabalho quase que imediatamente após sua alta hospitalar. A situação é crítica: ela precisa de ajuda urgente para cobrir suas contas básicas e garantir sua alimentação.
+                            </p>
+
+                            <figure class="my-8">
+                                <img src="https://ongesperancadobem.ru/storage/campaigns/ee693fc7-bf14-4f6c-a5ed-33f197b84a28.webp"
+                                    alt="Natália e sua família" class="w-full rounded-2xl shadow-md object-cover">
+                                <figcaption class="text-center text-sm text-gray-400 mt-2 italic">
+                                    Natália em casa
+                                </figcaption>
+                            </figure>
+
+                            <p class="text-justify">
+                                Infelizmente, a realidade é que ela está endividada e, além disso, precisa fazer uma dentadura após perder todos os dentes. Isso não é apenas uma questão estética, mas uma necessidade para que ela possa se alimentar e se sentir digna novamente.
+                            </p>
+
+                            <blockquote
+                                class="bg-primary/10 border-l-4 border-primary pl-5 pr-4 py-4 rounded-r-xl my-6">
+                                <p class="text-gray-700 italic">"Se você puder, por favor, ajude a Natália a não precisar escolher entre comer ou viver. Seu apoio pode dar a ela o tempo necessário para se recuperar e se afastar das ruas, onde sua vida corre riscos todos os dias."</p>
+                            </blockquote>
+
+                            <p class="text-justify">
+                                Estamos arrecadando fundos para garantir a sua recuperação e também para que ela possa pagar suas contas atrasadas e seu tratamento dentário. Já
+                                arrecadamos <strong class="text-primary">R$ <span x-text="fmt(totalAmount)"></span></strong> —
+                                <span x-text="progressFormatted + '% '"></span> da meta! Mas ainda precisamos muito
+                                da sua ajuda para chegar lá.
+                            </p>
+
+                            <p class="text-justify">
+                                Qualquer valor faz diferença neste momento tão difícil para a Natália e sua família.<br><br>
+                                🙏 <strong>Se não puder doar, por favor, compartilhe. Compartilhar também salva vidas.</strong>
+                            </p>
+    </div>
+
+                        <!-- Campaign details card -->
+                        <div class="mt-10 bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                            <h3 class="font-poppins font-semibold text-base text-gray-800 mb-4">Detalhes da Campanha
+                            </h3>
+                            <dl class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
+                                <div>
+                                    <dt class="text-gray-400">Categoria</dt>
+                                    <dd class="font-medium text-gray-800 mt-0.5">Saúde</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-gray-400">Criado em</dt>
+                                    <dd class="font-medium text-gray-800 mt-0.5">Março de 2026</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-gray-400">Beneficiária</dt>
+                                    <dd class="font-medium text-gray-800 mt-0.5">Natália</dd></dd>
+                                </div>
+                                <div>
+                                    <dt class="text-gray-400">Status</dt>
+                                    <dd class="font-medium text-secondary mt-0.5">● Ativa</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-gray-400">Organizador</dt>
+                                    <dd class="font-medium text-gray-800 mt-0.5">Amigos da Natália</dd></dd>
+                                </div>
+                                <div>
+                                    <dt class="text-gray-400">Transparência</dt>
+                                    <dd class="font-medium text-gray-800 mt-0.5">100% verificada</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <!-- ===== DONATION WIDGET ===== -->
+                    <div id="choice" class="lg:col-span-1 order-1 lg:order-2">
+                        <div class="sticky top-20" x-data="{
+                                selectedAmount: 50,
+                                customAmount: '',
+                                donorName: '',
+                                donorEmail: '',
+                                isAnonymous: false,
+                                amounts: [30, 40, 50, 100, 150, 200, 250, 500, 750, 1000],
+                                selectAmount(val) {
+                                    this.selectedAmount = val;
+                                    this.customAmount = '';
+                                },
+                                get finalAmount() {
+                                    const c = parseFloat(this.customAmount);
+                                    return (!isNaN(c) && c > 0) ? c : this.selectedAmount;
+                                },
+                                fmt(v) {
+                                    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(v);
+                                }
+                            }">
+                            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden">
+
+                                <!-- Widget header -->
+                                <div
+                                    class="bg-gradient-to-br from-primary/15 to-primary/5 p-5 border-b border-primary/15">
+                                    <h3 class="font-poppins font-bold text-lg text-gray-900 mb-0.5">Faça sua doação</h3>
+                                    <p class="text-sm text-gray-500">Cada real faz a diferença na vida de Rosiele ❤️</p>
+                                </div>
+
+                                <!-- Progress inside widget -->
+                                <div class="px-5 pt-5 pb-4 border-b border-gray-100">
+                                    <div class="flex items-end justify-between mb-2">
+                                        <div>
+                                            <div class="font-poppins font-bold text-xl text-gray-900" x-text="fmt(totalAmount)"></div>
+                                            <div class="text-xs text-gray-400">arrecadados de R$ 30.000,00</div>
+                                        </div>
+                                        <span class="font-poppins font-bold text-2xl text-primary" x-text="progressFormatted + '% '"></span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                        <div class="progress-bar h-3 rounded-full" :style="'width: ' + progressPercent + '% '"></div>
+                                    </div>
+                                    <div class="flex justify-between text-xs text-gray-400 mt-1.5">
+                                        <span><span x-text="donors"></span> doadores</span>
+                                        <span x-text="'Falta ' + fmt(remainingAmount)"></span>
+                                    </div>
+                                </div>
+
+                                <!-- Amount grid + form -->
+                                <div class="p-5 space-y-4">
+
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Escolha um
+                                            valor:</label>
+                                        <div class="grid grid-cols-2 gap-2">
+                                            <template x-for="amt in amounts" :key="amt">
+                                                <button @click="selectAmount(amt)"
+                                                    :class="selectedAmount === amt && customAmount === ''
+                                                        ? 'bg-primary text-white border-primary shadow-md shadow-primary/30'
+                                                        : 'bg-white text-gray-700 border-gray-200 hover:border-primary hover:text-primary'"
+                                                    class="border-2 rounded-xl py-2.5 px-3 font-semibold text-sm transition-all duration-150"
+                                                    x-text="'R$ ' + amt"></button>
+                                            </template>
+                                        </div>
+                                    </div>
+
+                                    <!-- Custom amount -->
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-600 mb-1.5">Ou digite outro
+                                            valor:</label>
+                                        <div class="relative">
+                                            <span
+                                                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm font-medium select-none">R$</span>
+                                            <input type="number" x-model="customAmount"
+                                                @input="if(customAmount) selectedAmount = null"
+                                                @blur="if(!customAmount) selectedAmount = selectedAmount || 50"
+                                                placeholder="0,00" min="1"
+                                                class="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary transition-colors text-gray-800 font-medium placeholder-gray-300 text-sm">
+                                        </div>
+                                    </div>
+
+                                    <!-- Donor name -->
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-600 mb-1.5">Seu nome:</label>
+                                        <input type="text" x-model="donorName" :disabled="isAnonymous"
+                                            :placeholder="isAnonymous ? 'Apoio anônimo' : 'Como você quer ser identificado?'"
+                                            :class="isAnonymous ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-white text-gray-800'"
+                                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary transition-colors font-medium placeholder-gray-300 text-sm">
+                                    </div>
+
+                                    <!-- Donor email -->
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-600 mb-1.5">Seu e-mail <span
+                                                class="text-gray-400 font-normal">(opcional)</span>:</label>
+                                        <input type="email" x-model="donorEmail" :disabled="isAnonymous"
+                                            :placeholder="isAnonymous ? 'Apoio anônimo' : 'email@exemplo.com'"
+                                            :class="isAnonymous ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-white text-gray-800'"
+                                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary transition-colors font-medium placeholder-gray-300 text-sm">
+                                    </div>
+
+                                    <!-- Anonymous checkbox -->
+                                    <label class="flex items-center gap-3 cursor-pointer select-none">
+                                        <div class="relative flex-shrink-0">
+                                            <input type="checkbox" x-model="isAnonymous" class="sr-only peer">
+                                            <div
+                                                class="w-5 h-5 border-2 border-gray-300 rounded peer-checked:bg-primary peer-checked:border-primary transition-all flex items-center justify-center">
+                                                <svg x-show="isAnonymous" class="w-3 h-3 text-white" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <span class="text-sm text-gray-600">Desejo que meu apoio não seja público</span>
+                                    </label>
+
+                                    <!-- Donate button -->
+                                    <button
+                                        @click="$dispatch('open-pix', { amount: finalAmount, name: isAnonymous ? '' : donorName, email: isAnonymous ? '' : donorEmail })"
+                                        class="w-full bg-primary hover:bg-primary-dark active:scale-[0.98] text-white font-poppins font-bold text-base py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-primary/30 hover:shadow-primary/50">
+                                        <span>Doar </span>
+                                        <span x-text="fmt(finalAmount)"></span>
+                                        <span> 💝</span>
+                                    </button>
+
+                                    <!-- Security note -->
+                                    <div class="flex items-center justify-center gap-1.5 text-xs text-gray-400">
+                                        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                        </svg>
+                                        Pagamento 100% seguro e criptografado
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SUPPORTERS LIST ===== -->
+        <section id="apoios" class="bg-gray-50 py-12 border-t border-gray-100">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="font-poppins font-bold text-2xl text-gray-900">Apoios Recentes ❤️</h2>
+                    <span
+                        class="text-xs text-gray-500 bg-white border border-gray-200 px-3 py-1.5 rounded-full font-medium">215
+                        doadores</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" x-data="{
+                        supporters: [
+                            { name: 'Patrícia Souza', amount: 100, message: 'Que Deus dê forças para o Rege e cure a Rosiele! 🙏', time: 'há 1 hora', initials: 'PS' },
+                            { name: 'Marcos Alves', amount: 150, message: 'Fiquei emocionado ao ler a história. Força para vocês dois!', time: 'há 3 horas', initials: 'MA' },
+                            { name: 'Anônimo', amount: 300, message: '', time: 'há 4 horas', initials: '?' },
+                            { name: 'Juliana Ferreira', amount: 50, message: 'O amor verdadeiro não desiste. Vocês são exemplo! 💕', time: 'há 6 horas', initials: 'JF' },
+                            { name: 'Carlos Mendonça', amount: 200, message: 'Que essa campanha alcance a meta rapidinho. Vai dar certo!', time: 'há 8 horas', initials: 'CM' },
+                            { name: 'Renata Lima', amount: 75, message: 'Rosiele, você não está sozinha. Estamos aqui! 💪', time: 'há 10 horas', initials: 'RL' },
+                            { name: 'Anônimo', amount: 500, message: 'Contribuição de coração para a Rosiele e o Rege.', time: 'há 12 horas', initials: '?' },
+                            { name: 'Tiago Barbosa', amount: 30, message: '', time: 'há 14 horas', initials: 'TB' },
+                            { name: 'Cristina Nunes', amount: 250, message: 'Que ela se recupere e volte a dançar na cozinha! ❤️', time: 'há 16 horas', initials: 'CN' },
+                            { name: 'Eduardo Costa', amount: 40, message: 'Pouco, mas feito com muito amor! Não desistam!', time: 'há 20 horas', initials: 'EC' },
+                        ],
+                        fmt(v) {
+                            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(v);
+                        }
+                    }">
+                    <template x-for="(s, i) in supporters" :key="i">
+                        <div
+                            class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-start gap-3">
+                                <!-- Avatar -->
+                                <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 select-none"
+                                    :style="s.name === 'Anônimo' ? 'background:#9CA3AF' : 'background:#D97E7E'"
+                                    x-text="s.initials"></div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <span class="font-semibold text-gray-800 text-sm truncate"
+                                            x-text="s.name"></span>
+                                        <span class="font-bold text-primary text-sm flex-shrink-0"
+                                            x-text="fmt(s.amount)"></span>
+                                    </div>
+                                    <p class="text-xs text-gray-400 mt-0.5" x-text="s.time"></p>
+                                    <p x-show="s.message" class="text-sm text-gray-600 mt-2 italic leading-relaxed"
+                                        x-text="s.message"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Load more -->
+                <div class="text-center mt-8">
+                    <button
+                        class="bg-white border-2 border-gray-200 hover:border-primary hover:text-primary text-gray-500 font-semibold text-sm px-6 py-3 rounded-xl transition-colors">
+                        Ver mais apoios
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="bg-gray-900 text-gray-500 py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+                <div class="flex items-center gap-2">
+                    <img src="https://ongesperancadobem.ru/storage/campaigns/branding/cc851ba9-0b26-4d6b-a75b-bc3752551345.webp"
+                        alt="Logo" class="h-7 w-auto brightness-0 invert opacity-40"
+                        onerror="this.style.display='none'">
+                    <span class="text-gray-400 font-medium">OngesperançadoBem</span>
+                </div>
+                <nav class="flex gap-5">
+                    <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacidade</a>
+                    <a href="#" class="hover:text-white transition-colors">Contato</a>
+                </nav>
+                <p class="text-xs text-gray-600">© 2026 OngesperançadoBem. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================== FIXED MOBILE BUTTON ===================== -->
+    <div
+        class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-t border-gray-200 px-4 py-3 shadow-2xl">
+        <a href="#choice"
+            class="flex items-center justify-center gap-2 w-full bg-primary hover:bg-primary-dark text-white font-poppins font-bold text-base py-4 rounded-2xl transition-colors shadow-lg shadow-primary/40">
+            Quero Ajudar 🙏
+        </a>
+    </div>
+
+
+    <!-- ===================== PIX PAYMENT MODAL ===================== -->
+    <div x-data="pixModal()" x-on:open-pix.window="open($event.detail)" x-show="isOpen" x-cloak
+        class="fixed inset-0 z-[200] flex flex-col justify-end sm:justify-center sm:items-center" style="display:none">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0" @click="close()"></div>
+
+        <!-- Modal card — bottom sheet on mobile, centered on desktop -->
+        <div class="relative bg-white w-full sm:max-w-sm sm:mx-4 rounded-t-3xl sm:rounded-3xl shadow-2xl z-10 overflow-y-auto"
+            style="max-height: 92dvh;" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="translate-y-6 opacity-0" x-transition:enter-end="translate-y-0 opacity-100"
+            x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-y-0 opacity-100"
+            x-transition:leave-end="translate-y-6 opacity-0" @click.stop>
+            <!-- Drag handle (mobile only) -->
+            <div class="sm:hidden flex justify-center pt-3 pb-0">
+                <div class="w-10 h-1 bg-gray-200 rounded-full"></div>
+            </div>
+
+            <!-- Close button -->
+            <button @click="close()"
+                class="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 transition-colors z-20"
+                aria-label="Fechar">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- ── STATE: LOADING ── -->
+            <div x-show="state === 'loading'" class="flex flex-col items-center justify-center gap-5 px-8 py-14">
+                <div class="relative w-16 h-16">
+                    <div class="absolute inset-0 rounded-full border-4 border-primary/20"></div>
+                    <div
+                        class="absolute inset-0 rounded-full border-4 border-transparent border-t-primary animate-spin">
+                    </div>
+                    <div class="absolute inset-2 bg-primary/10 rounded-full flex items-center justify-center">
+                        <span class="text-xl">💝</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p class="font-poppins font-semibold text-gray-800 text-base mb-1">Gerando seu PIX...</p>
+                    <p class="text-sm text-gray-400">Por favor, aguarde um instante</p>
+                </div>
+            </div>
+
+            <!-- ── STATE: READY ── -->
+            <div x-show="state === 'ready'" class="flex flex-col items-center px-6 pt-5 pb-8 gap-5">
+
+                <!-- Header: amount -->
+                <div class="text-center w-full">
+                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">Doação via PIX</p>
+                    <p class="font-poppins font-bold text-3xl text-primary" x-text="fmt(amount)"></p>
+                    <p class="text-xs text-gray-400 mt-1">Natália infartou trabalhando. Ajude ela a não morrer na rua.</p>
+                </div>
+
+                <!-- Divider -->
+                <div class="w-full border-t border-dashed border-gray-200"></div>
+
+                <!-- QR Code -->
+                <div class="flex flex-col items-center gap-3 w-full">
+                    <div class="bg-white border-2 border-gray-100 rounded-2xl p-3 shadow-sm">
+                        <img :src="'data:image/png;base64,' + qrCodeBase64" alt="QR Code PIX"
+                            class="w-48 h-48 sm:w-52 sm:h-52 object-contain select-none" draggable="false">
+                    </div>
+
+                    <!-- Countdown timer -->
+                    <div class="flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full transition-colors"
+                        :class="timerIsUrgent ? 'bg-red-50 text-red-500' : 'bg-gray-100 text-gray-500'">
+                        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Expira em&nbsp;<strong x-text="timerDisplay"></strong></span>
+                    </div>
+                </div>
+
+                <!-- Copia e Cola -->
+                <div class="w-full space-y-2">
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">PIX Copia e Cola</p>
+                    <div class="flex gap-2 items-stretch">
+                        <input type="text" :value="qrCode" readonly
+                            class="flex-1 min-w-0 text-xs bg-gray-50 border border-gray-200 rounded-xl px-3 py-3 text-gray-600 font-mono truncate focus:outline-none focus:border-primary/50 transition-colors select-all cursor-pointer"
+                            @click="$el.select()" title="Clique para selecionar">
+                        <button @click="copy()" :class="copied
+                                ? 'bg-secondary text-white shadow-sm shadow-secondary/30'
+                                : 'bg-primary hover:bg-primary-dark text-white shadow-sm shadow-primary/30'"
+                            class="flex-shrink-0 flex items-center gap-1.5 px-4 rounded-xl font-semibold text-sm transition-all duration-200 whitespace-nowrap">
+                            <svg x-show="!copied" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                            <svg x-show="copied" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span x-text="copied ? 'Copiado!' : 'Copiar'"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Instruction -->
+                <div class="w-full bg-gray-50 rounded-2xl px-4 py-3 flex items-start gap-3">
+                    <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        Abra o app do seu banco, vá em <strong class="text-gray-700">PIX</strong>, e escaneie o QR code
+                        ou cole o código acima para finalizar a doação.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ── STATE: ERROR ── -->
+            <div x-show="state === 'error'" class="flex flex-col items-center justify-center gap-4 px-8 py-14">
+                <div class="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.963-.833-2.732 0L3.062 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                    </svg>
+                </div>
+                <div class="text-center">
+                    <p class="font-poppins font-semibold text-gray-800 mb-1">Ocorreu um erro</p>
+                    <p class="text-sm text-gray-500 leading-relaxed" x-text="errorMessage"></p>
+                </div>
+                <button @click="retry()"
+                    class="bg-primary hover:bg-primary-dark text-white font-semibold text-sm px-6 py-3 rounded-xl transition-colors">
+                    Tentar novamente
+                </button>
+            </div>
+
+            <!-- ── STATE: EXPIRED ── -->
+            <div x-show="state === 'expired'" class="flex flex-col items-center justify-center gap-4 px-8 py-14">
+                <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div class="text-center">
+                    <p class="font-poppins font-semibold text-gray-800 mb-1">PIX expirado</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">O tempo de pagamento expirou. Gere um novo código
+                        para continuar.</p>
+                </div>
+                <button @click="retry()"
+                    class="bg-primary hover:bg-primary-dark text-white font-semibold text-sm px-6 py-3 rounded-xl transition-colors">
+                    Gerar novo PIX
+                </button>
+            </div>
+
+        </div><!-- /card -->
+    </div><!-- /modal -->
+
+    <!-- pixModal() component -->
+    <script>
+        function pixModal() {
+            return {
+                isOpen: false,
+                state: 'loading', // loading | ready | error | expired
+                amount: 0,
+                donorName: '',
+                donorEmail: '',
+                qrCode: '',
+                qrCodeBase64: '',
+                paymentId: null,
+                copied: false,
+                timerSeconds: 1800,
+                timerInterval: null,
+                errorMessage: '',
+
+                get timerDisplay() {
+                    const m = Math.floor(this.timerSeconds / 60).toString().padStart(2, '0');
+                    const s = (this.timerSeconds % 60).toString().padStart(2, '0');
+                    return `${m}:${s}`;
+                },
+
+                get timerIsUrgent() {
+                    return this.timerSeconds < 300; // últimos 5 min ficam vermelho
+                },
+
+                fmt(v) {
+                    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(v);
+                },
+
+                async open(detail) {
+                    this.amount = detail.amount || 50;
+                    this.donorName = detail.name || '';
+                    this.donorEmail = detail.email || '';
+                    // reset
+                    this.qrCode = this.qrCodeBase64 = '';
+                    this.paymentId = null;
+                    this.copied = false;
+                    this.timerSeconds = 1800;
+                    this.errorMessage = '';
+                    this.state = 'loading';
+                    this.isOpen = true;
+                    document.body.style.overflow = 'hidden';
+                    await this.generatePix();
+                },
+
+                close() {
+                    this.isOpen = false;
+                    document.body.style.overflow = '';
+                    if (this.timerInterval) {
+                        clearInterval(this.timerInterval);
+                        this.timerInterval = null;
+                    }
+                },
+
+                async generatePix() {
+                    try {
+                        const res = await fetch('/api/create-pix', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                nome: this.donorName || 'Doador Anônimo',
+                                email: this.donorEmail || '',
+                                valor: this.amount,
+                                cpf: '',
+                            }),
+                        });
+
+                        const text = await res.text();
+                        let data;
+                        try {
+                            data = text ? JSON.parse(text) : {};
+                        } catch (e) {
+                            console.error('Resposta não-JSON do servidor:', text.substring(0, 200));
+                            throw new Error('Erro no servidor de pagamentos. Resposta inválida: ' + text.substring(0, 50));
+                        }
+
+                        if (!res.ok || !data.success) {
+                            console.error('Erro retornado pela API:', data);
+                            const serverError = data.error || data.message || JSON.stringify(data);
+                            throw new Error(serverError || `Erro desconhecido HTTP ${res.status}`);
+                        }
+
+                        this.qrCode = data.pix.qrCode;
+                        this.qrCodeBase64 = data.pix.qrCodeBase64;
+                        this.paymentId = data.pix.paymentId;
+                        this.state = 'ready';
+                        this.startTimer();
+
+                    } catch (err) {
+                        this.errorMessage = err.message || 'Erro inesperado. Tente novamente.';
+                        this.state = 'error';
+                    }
+                },
+
+                startTimer() {
+                    if (this.timerInterval) clearInterval(this.timerInterval);
+                    this.timerInterval = setInterval(() => {
+                        if (this.timerSeconds > 0) {
+                            this.timerSeconds--;
+                        } else {
+                            clearInterval(this.timerInterval);
+                            this.timerInterval = null;
+                            this.state = 'expired';
+                        }
+                    }, 1000);
+                },
+
+                async copy() {
+                    try {
+                        await navigator.clipboard.writeText(this.qrCode);
+                    } catch {
+                        // Fallback para dispositivos sem Clipboard API
+                        const el = document.createElement('textarea');
+                        el.value = this.qrCode;
+                        el.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+                        document.body.appendChild(el);
+                        el.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(el);
+                    }
+                    this.copied = true;
+                    setTimeout(() => { this.copied = false; }, 3000);
+                },
+
+                async retry() {
+                    this.state = 'loading';
+                    this.errorMessage = '';
+                    await this.generatePix();
+                },
+            };
+        }
+    </script>
+
+
+    <!-- ===================== TOAST NOTIFICATION ===================== -->
+    <div class="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-[100]" x-cloak x-show="showToast"
+        x-transition:enter="transition ease-out duration-300 transform"
+        x-transition:enter-start="translate-y-12 opacity-0"
+        x-transition:enter-end="translate-y-0 opacity-100"
+        x-transition:leave="transition ease-in duration-300 transform"
+        x-transition:leave-start="translate-y-0 opacity-100"
+        x-transition:leave-end="translate-y-12 opacity-0">
+        <div class="bg-white px-4 py-3 rounded-2xl shadow-xl shadow-primary/20 border border-primary/10 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm shrink-0 shadow-inner">
+                <span x-text="recentDonation ? recentDonation.initials : '?'"></span>
+            </div>
+            <div class="flex-1">
+                <p class="text-xs text-gray-400 font-medium">Doação recebida agora</p>
+                <p class="text-sm font-semibold text-gray-800">
+                    <span x-text="recentDonation ? recentDonation.name : ''"></span> doou
+                    <span class="text-secondary" x-text="recentDonation ? fmt(recentDonation.amount) : ''"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- campaignStore() component -->
+    <script>
+        function campaignStore() {
+            return {
+                totalAmount: 20480.00,
+                goalAmount: 30000.00,
+                donors: 215,
+
+                recentDonation: null,
+                showToast: false,
+
+                names: [
+                    'Maria F.', 'João P.', 'Ana L.', 'Carla O.', 'Roberto S.',
+                    'Pedro M.', 'Fernanda C.', 'Lucas R.', 'Beatriz T.', 'Carlos E.',
+                    'Julia N.', 'Marcos V.', 'Sofia A.', 'Gabriel L.', 'Amanda P.'
+                ],
+
+                get progressPercent() {
+                    const p = (this.totalAmount / this.goalAmount) * 100;
+                    return p > 100 ? 100 : p;
+                },
+
+                get progressFormatted() {
+                    return this.progressPercent.toFixed(1);
+                },
+
+                get remainingAmount() {
+                    const r = this.goalAmount - this.totalAmount;
+                    return r < 0 ? 0 : r;
+                },
+
+                fmt(v) {
+                    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(v);
+                },
+
+                init() {
+                    // Simulate a donation every 40-50 seconds
+                    setTimeout(() => {
+                        this.simulateDonation();
+                        setInterval(() => {
+                            this.simulateDonation();
+                        }, Math.floor(Math.random() * 5000) + 10000);
+                    }, 20000);
+                },
+
+                simulateDonation() {
+                    if (this.showToast) return; // wait if already showing
+
+                    // Random amount between 10 and 50
+                    const amount = Math.floor(Math.random() * (50 - 10 + 1) + 10);
+                    // Random name
+                    const name = this.names[Math.floor(Math.random() * this.names.length)];
+                    const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2);
+
+                    // Update states
+                    this.totalAmount += amount;
+                    this.donors += 1;
+
+                    this.recentDonation = { name, amount, initials };
+                    this.showToast = true;
+
+                    // Hide toast after 5 seconds
+                    setTimeout(() => {
+                        this.showToast = false;
+                    }, 5000);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
